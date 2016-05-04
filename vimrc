@@ -8,6 +8,8 @@ Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'airblade/vim-gitgutter'
+"Plugin 'wookiehangover/jshint.vim'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
@@ -80,3 +82,10 @@ let g:flake8_show_in_gutter=0
 let php_sql_query=1
 let php_htmlInStrings=1
 let php_baselib=1
+
+" Uncomment the following to have Vim jump to the last position when 
+" reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
