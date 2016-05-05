@@ -10,6 +10,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'airblade/vim-gitgutter'
 "Plugin 'wookiehangover/jshint.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'nvie/vim-flake8'
 
 call vundle#end()
 
@@ -48,6 +49,8 @@ set visualbell
 set noerrorbells
 set laststatus=2
 set statusline=%n\ %F\ %m%r\%=%c-%l/%L
+set encoding=utf-8
+set clipboard=unnamedplus
 
 nnoremap ; :nohlsearch<CR>
 set pastetoggle=<F2>
@@ -70,6 +73,13 @@ let NERDTreeMinimalUI=1
 let NERDTreeShowBookmarks=1
 map <C-n> :NERDTreeToggle<CR>
 
+"YouCompleteMe
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+"Python
 autocmd BufWritePost *.py call Flake8()
 "python remove trailing whitespace
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
@@ -77,6 +87,16 @@ autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 let python_highlight_all=1
 let g:flake8_max_line_length=99
 let g:flake8_show_in_gutter=0
+"PEP8 Indentation
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
 
 "PHP highlighting extras
 let php_sql_query=1
