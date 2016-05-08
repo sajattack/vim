@@ -10,7 +10,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'airblade/vim-gitgutter'
 "Plugin 'wookiehangover/jshint.vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'nvie/vim-flake8'
+Plugin 'klen/python-mode'
 
 call vundle#end()
 
@@ -77,25 +77,30 @@ map <C-n> :NERDTreeToggle<CR>
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "Python
-autocmd BufWritePost *.py call Flake8()
-"python remove trailing whitespace
-autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
-"python highlighting extras
-let python_highlight_all=1
-let g:flake8_max_line_length=99
-let g:flake8_show_in_gutter=0
-"PEP8 Indentation
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
+"python-mode
+let g:pymode=1
+let g:pymode_warnings=1
+let g:pymode_paths=[]
+let g:pymode_trim_whitespaces=1
+let g:pymode_options=1
+let g:pymode_options_max_ling_length=79
+let g:pymode_options_colorcolumn=1
+let g:pymode_quickfix_minheight=3
+let g:pymode_quickfix_maxheight=6
+let g:pymode_indent=1
+let g:pymode_folding=1
+let g:pymode_motions=1
+let g:pymode_doc=1
+let g:pymode_doc_bind='K'
+let g:pymode_lint=1
+let g:pymode_lint_on_fly=1
+let g:pymode_lint_on_write=0
+let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']
+let g:pymode_lint_ignore = "E501,W"
+let g:pymode_syntax_all=1
 
 
 "PHP highlighting extras
