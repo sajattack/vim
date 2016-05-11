@@ -54,6 +54,8 @@ set encoding=utf-8
 set clipboard=unnamedplus
 
 nnoremap ; :nohlsearch<CR>
+nmap <Enter> o<Esc>
+
 set pastetoggle=<F2>
 
 if has("unix")
