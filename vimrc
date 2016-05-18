@@ -14,6 +14,8 @@ Plugin 'klen/python-mode'
 Plugin 'mxw/vim-jsx'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails.git'
+Plugin 'tpope/vim-surround'
 
 call vundle#end()
 
