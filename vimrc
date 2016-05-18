@@ -12,6 +12,8 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'klen/python-mode'
 Plugin 'mxw/vim-jsx'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'vim-ruby/vim-ruby'
 
 call vundle#end()
 
