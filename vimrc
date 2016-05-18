@@ -56,6 +56,7 @@ set laststatus=2
 set statusline=%n\ %F\ %m%r\%=%c-%l/%L
 set encoding=utf-8
 set clipboard=unnamedplus
+set noswapfile
 
 nnoremap ; :nohlsearch<CR>
 nmap <Enter> o<Esc>
