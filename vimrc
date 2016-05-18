@@ -61,18 +61,6 @@ set noswapfile
 nnoremap ; :nohlsearch<CR>
 nmap <Enter> o<Esc>
 
-set pastetoggle=<F2>
-
-if has("unix")
-    set backup
-    set backupdir=/tmp
-    set directory=/tmp
-elseif has("win32")
-    set backup
-    set backupdir=C:\Windows\Temp
-    set noswapfile
-endif
-
 "NERDTree
 let NERDTreeChDirMode=1
 let NERDTreeIgnore=['\.pyc$', '\.swp$']
