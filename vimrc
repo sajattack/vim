@@ -9,7 +9,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'marijnh/tern_for_vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'klen/python-mode'
 Plugin 'mxw/vim-jsx'
 Plugin 'tomtom/tcomment_vim'
@@ -70,6 +70,7 @@ let NERDTreeShowBookmarks=1
 map <C-n> :NERDTreeToggle<CR>
 
 "YouCompleteMe
+let g:enable_ycm_at_startup = 0
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -96,7 +97,7 @@ let g:pymode_warnings=1
 let g:pymode_paths=[]
 let g:pymode_trim_whitespaces=1
 let g:pymode_options=1
-let g:pymode_options_max_ling_length=79
+let g:pymode_options_max_line_length=99
 let g:pymode_options_colorcolumn=1
 let g:pymode_quickfix_minheight=3
 let g:pymode_quickfix_maxheight=6
@@ -108,10 +109,13 @@ let g:pymode_doc_bind='K'
 let g:pymode_lint=1
 let g:pymode_lint_on_fly=1
 let g:pymode_lint_on_write=0
-let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']
-let g:pymode_lint_ignore = "E501,W"
+let g:pymode_lint_checkers=['pyflakes', 'pep8', 'mccabe']
+let g:pymode_lint_ignore = "E502,W"
 let g:pymode_syntax_all=1
-
+let g:pymode_rope=1
+let g:pymode_rope_lookup_project=0
+let g:pymode_rope_completion=1 
+let g:pymode_rope_complete_on_dot=1 
 
 "PHP highlighting extras
 let php_sql_query=1
