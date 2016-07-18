@@ -59,6 +59,7 @@ set clipboard=unnamedplus
 set noswapfile
 
 nnoremap ; :nohlsearch<CR>
+set pastetoggle=<F2>
 nmap <Enter> o<Esc>
 
 "NERDTree
@@ -83,8 +84,9 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
 
 "Javascript
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
@@ -108,14 +110,14 @@ let g:pymode_doc=1
 let g:pymode_doc_bind='K'
 let g:pymode_lint=1
 let g:pymode_lint_on_fly=1
-let g:pymode_lint_on_write=0
-let g:pymode_lint_checkers=['pyflakes', 'pep8', 'mccabe']
-let g:pymode_lint_ignore = "E502,W"
+let g:pymode_lint_on_write=1
+let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']
+let g:pymode_lint_ignore = "E265,W0612"
 let g:pymode_syntax_all=1
-let g:pymode_rope=1
+let g:pymode_rope=0
 let g:pymode_rope_lookup_project=0
 let g:pymode_rope_completion=1 
-let g:pymode_rope_complete_on_dot=1 
+let g:pymode_rope_complete_on_dot=1
 
 "PHP highlighting extras
 let php_sql_query=1
