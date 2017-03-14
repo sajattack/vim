@@ -20,8 +20,9 @@ Plugin 'tpope/vim-surround'
 call vundle#end()
 
 filetype plugin indent on
-set background=light
-colorscheme Tomorrow
+set t_Co=256
+"set background=light
+"colorscheme Tomorrow
 
 if &t_Co > 2 || has("gui_running")
     syntax on
