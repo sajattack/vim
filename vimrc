@@ -16,6 +16,7 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails.git'
 Plugin 'tpope/vim-surround'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 
@@ -92,6 +93,16 @@ let g:syntastic_check_on_wq = 1
 "Javascript
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 let g:syntastic_javascript_checkers = ['eslint']
+
+"Go
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
 "Python
 "python-mode
