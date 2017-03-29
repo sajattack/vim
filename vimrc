@@ -22,8 +22,7 @@ call vundle#end()
 
 filetype plugin indent on
 set t_Co=256
-"set background=light
-"colorscheme Tomorrow
+colorscheme ron 
 
 if &t_Co > 2 || has("gui_running")
     syntax on
@@ -103,6 +102,7 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_template_autocreate = 0
 
 "Python
 "python-mode
